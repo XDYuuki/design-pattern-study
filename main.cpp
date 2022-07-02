@@ -7,7 +7,7 @@
 #define VALOR_CLONADO 7
 
 /**
- * @briefFunções de testes para os Design Patterns
+ * @brief Funções de testes para os Design Patterns
  * 
  */
 void testSingleton();
