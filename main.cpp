@@ -1,17 +1,11 @@
 #include <iostream>
+#include "main.h"
 #include "Singleton/Singleton.h"
 
+//COMMAND TO COMPILE THE CODE
 //g++ main.cpp Singleton/*.cpp -o main
 
-#define VALOR_INICIAL 5
-#define VALOR_CLONADO 7
-
-/**
- * @brief Funções de testes para os Design Patterns
- * 
- */
-void testSingleton();
-
+/*----------------------------------------------------------------------*/
 int main(int argc, char const *argv[])
 {
     testSingleton();
@@ -20,7 +14,6 @@ int main(int argc, char const *argv[])
 }
 
 /*----------------------------------------------------------------------*/
-
 void testSingleton()
 {
     int returnValue = 0;
