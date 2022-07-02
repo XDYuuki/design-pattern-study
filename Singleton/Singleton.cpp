@@ -12,7 +12,7 @@ Singleton::~Singleton()
 {
 }
 
-Singleton *Singleton::GetInstance(int value)
+Singleton *Singleton::getInstance(int value)
 {
     if (instance_ == nullptr)
     {

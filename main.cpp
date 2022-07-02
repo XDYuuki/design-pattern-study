@@ -18,8 +18,8 @@ void testSingleton()
 {
     int returnValue = 0;
 
-    Singleton * ptrSingleton = Singleton::GetInstance(VALOR_INICIAL);
-    Singleton * ptrSingletonClone = Singleton::GetInstance(VALOR_CLONADO);
+    Singleton * ptrSingleton = Singleton::getInstance(VALOR_INICIAL);
+    Singleton * ptrSingletonClone = Singleton::getInstance(VALOR_CLONADO);
 
     ptrSingleton->printTest();
     ptrSingletonClone->printTest();
