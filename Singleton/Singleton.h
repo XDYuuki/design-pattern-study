@@ -14,7 +14,7 @@ public:
  * @param value 
  * @return Singleton* 
  */
-    static Singleton *GetInstance(int value);
+    static Singleton *getInstance(int value);
 
 /**
  * @brief Get the Value object
