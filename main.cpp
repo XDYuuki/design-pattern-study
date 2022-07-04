@@ -1,14 +1,22 @@
 #include <iostream>
 #include "main.h"
-#include "Singleton/Singleton.h"
+#include "singleton/Singleton.h"
+#include "builder/Rice.h"
+//#include "builder/meal-itens/Rice.h" --- Resolver esse erro
 
 //COMMAND TO COMPILE THE CODE
-//g++ main.cpp Singleton/*.cpp -o main
+//g++ main.cpp singleton/*.cpp builder/*.cpp -o main
+//g++ *.cpp -o main
 
 /*----------------------------------------------------------------------*/
 int main(int argc, char const *argv[])
 {
-    testSingleton();
+    //testSingleton();
+
+    Rice * rice = new Rice("Arrozin", 50);
+    
+    std::cout <<"Preco do arroz: " << rice->getPrice()<< std::endl;
+    rice->printName();
 
     return 0;
 }
