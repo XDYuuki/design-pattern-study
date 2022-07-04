@@ -1,11 +1,8 @@
 #include <iostream>
-//#include "../interfaces/MealCompositeProtocol.h"
-#include "interfaces/MealCompositeProtocol.h"
+#include "BaseMealComposite.h"
 
-class Rice : public MealCompositeProtocol
+class Rice : public BaseMealComposite
 {
 public:
-    Rice(std::string name, double price):MealCompositeProtocol(name, price){}
-    double getPrice() override;
-    void printName();
+    Rice(std::string name, double price):BaseMealComposite(name, price){}
 };

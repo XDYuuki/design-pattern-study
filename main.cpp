@@ -2,6 +2,11 @@
 #include "main.h"
 #include "singleton/Singleton.h"
 #include "builder/Rice.h"
+#include "builder/Beans.h"
+#include "builder/Meat.h"
+#include "builder/Beverage.h"
+#include "builder/Dessert.h"
+#include "builder/Meal.h"
 //#include "builder/meal-itens/Rice.h" --- Resolver esse erro
 
 //COMMAND TO COMPILE THE CODE
@@ -14,9 +19,23 @@ int main(int argc, char const *argv[])
     //testSingleton();
 
     Rice * rice = new Rice("Arrozin", 50);
+    Beans * beans = new Beans("Feijão", 10);
+    Meat * meat = new Meat("Carne", 60);
+    Beverage * beverage = new Beverage("Bebida", 25.5);
+    Dessert * dessert = new Dessert("sobremesa", 15);
+
+    Meal * meal = new Meal();
+
+    meal->addIten(beans);
     
     std::cout <<"Preco do arroz: " << rice->getPrice()<< std::endl;
-    rice->printName();
+
+    delete rice;
+    delete beans;
+    delete meat;
+    delete beverage;
+    delete dessert;
+    delete meal;
 
     return 0;
 }
