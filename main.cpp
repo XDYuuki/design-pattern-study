@@ -7,7 +7,6 @@
 #include "builder/Beverage.h"
 #include "builder/Dessert.h"
 #include "builder/Meal.h"
-//#include "builder/meal-itens/Rice.h" --- Resolver esse erro
 
 //COMMAND TO COMPILE THE CODE
 //g++ main.cpp singleton/*.cpp builder/*.cpp -o main
@@ -26,9 +25,13 @@ int main(int argc, char const *argv[])
 
     Meal * meal = new Meal();
 
-    meal->addIten(beans);
+    //meal->addIten(rice);
+    meal->addIten(5);
     
-    std::cout <<"Preco do arroz: " << rice->getPrice()<< std::endl;
+    std::cout <<"Teste"<<std::endl;
+    
+    std::cout <<"Preco do item " << dessert->getPrice()<< std::endl;
+    //std::cout <<"Preco da refeicao: " << meal->getPrice()<< std::endl;
 
     delete rice;
     delete beans;
