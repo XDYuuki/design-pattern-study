@@ -7,9 +7,9 @@
 class BaseMealComposite: public MealCompositeInterface
 {
 protected:
+public:
     std::string name_;
     double price_;
-public:
     BaseMealComposite(std::string name, double price);
     double getPrice() override;
 };

@@ -10,14 +10,12 @@
 class Meal: public MealCompositeInterface
 {
 private:
-    //std::vector<BaseMealComposite*> MealBox_;
+    std::vector<BaseMealComposite *> MealBox_;
 public:
-    std::vector<int> MealBox_;
     Meal();
-    double getPrice() override;
-    //void addIten(/*std::initializer_list<*/BaseMealComposite/*>*/ mealIten);
+    double getPrice() override;    
     //void addIten(BaseMealComposite* mealIten);
-    void addIten(int mealIten);
+    void addIten(std::initializer_list<BaseMealComposite *> mealIten);
 };
 
 #endif

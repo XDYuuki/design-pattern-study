@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "main.h"
 #include "singleton/Singleton.h"
 #include "builder/Rice.h"
@@ -9,8 +10,9 @@
 #include "builder/Meal.h"
 
 //COMMAND TO COMPILE THE CODE
-//g++ main.cpp singleton/*.cpp builder/*.cpp -o main
-//g++ *.cpp -o main
+//g++ -g main.cpp singleton/*.cpp builder/*.cpp -static -o main
+//g++ -fdiagnostics-color=always -g main.cpp singleton/*.cpp builder/*.cpp -static -o main.exe
+
 
 /*----------------------------------------------------------------------*/
 int main(int argc, char const *argv[])
@@ -18,20 +20,16 @@ int main(int argc, char const *argv[])
     //testSingleton();
 
     Rice * rice = new Rice("Arrozin", 50);
-    Beans * beans = new Beans("Feijão", 10);
-    Meat * meat = new Meat("Carne", 60);
-    Beverage * beverage = new Beverage("Bebida", 25.5);
-    Dessert * dessert = new Dessert("sobremesa", 15);
+    Beans * beans = new Beans("Feijaozin", 10);
+    Meat * meat = new Meat("Carninha", 60);
+    Beverage * beverage = new Beverage("Bebidinha", 25.5);
+    Dessert * dessert = new Dessert("sobremesinha", 15);
 
     Meal * meal = new Meal();
 
-    //meal->addIten(rice);
-    meal->addIten(5);
+    meal->addIten({dessert, beans, rice, beverage, meat});
     
-    std::cout <<"Teste"<<std::endl;
-    
-    std::cout <<"Preco do item " << dessert->getPrice()<< std::endl;
-    //std::cout <<"Preco da refeicao: " << meal->getPrice()<< std::endl;
+    std::cout <<"Preco da refeicao: " << meal->getPrice()<< std::endl;
 
     delete rice;
     delete beans;
