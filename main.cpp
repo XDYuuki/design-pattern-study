@@ -1,20 +1,27 @@
 #include <iostream>
+#include <vector>
 #include "main.h"
-#include "Singleton/Singleton.h"
+#include "singleton/Singleton.h"
+#include "builder/PremadeMealBoxBuilder.h"
+#include "builder/Meal.h"
 
 //COMMAND TO COMPILE THE CODE
-//g++ main.cpp Singleton/*.cpp -o main
+//g++ -g main.cpp singleton/*.cpp builder/*.cpp -static -o main
+//g++ -fdiagnostics-color=always -g main.cpp singleton/*.cpp builder/*.cpp -static -o main.exe
+
 
 /*----------------------------------------------------------------------*/
 int main(int argc, char const *argv[])
 {
-    testSingleton();
+    TestSingleton();
+    TestBuilder();
 
     return 0;
 }
 
+
 /*----------------------------------------------------------------------*/
-void testSingleton()
+void TestSingleton()
 {
     int returnValue = 0;
 
@@ -35,4 +42,21 @@ void testSingleton()
         std::cout<<"Mesmo endereco de memoria"<<"\n";
     }
 
+}
+
+/*----------------------------------------------------------------------*/
+void TestBuilder()
+{
+    PremadeMealBoxBuilder * CustonMealBox01 = new PremadeMealBoxBuilder();
+    Meal * MealBox;
+
+    CustonMealBox01->MakeMeal()->MakeDessert()->MakeBeverage();
+    MealBox = CustonMealBox01->GetMeal();    
+
+    MealBox->GetNotaFiscal();
+
+    CustonMealBox01->Reset();
+    CustonMealBox01->MakeMeal()->MakeBeverage();
+
+     MealBox->GetNotaFiscal();
 }

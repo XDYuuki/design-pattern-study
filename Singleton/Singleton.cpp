@@ -23,7 +23,7 @@ Singleton *Singleton::getInstance(int value)
 
 void Singleton::printTest()
 {
-    std::cout<<"Testando a Classe"<<"\n";
+    std::cout<<"Testando a Classe"<<std::endl;
 }
 
 int Singleton::getValue()
