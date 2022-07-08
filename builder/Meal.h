@@ -14,7 +14,7 @@ private:
 public:
     Meal();
     double getPrice() override;    
-    //void addIten(BaseMealComposite* mealIten);
+    void GetNotaFiscal();
     void addIten(std::initializer_list<BaseMealComposite *> mealIten);
 };
 

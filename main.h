@@ -8,10 +8,14 @@
 #define VALOR_CLONADO 7
 
 /**
- * @brief Funções de testes para o Design Pattern Singleton
- * 
+ * @brief Função de testes para o Design Pattern Singleton
  */
-void testSingleton();
+void TestSingleton();
+
+/**
+ * @brief Função de testes para o Design Pattern Builder [+ Composite]
+ */
+void TestBuilder();
 
 /*-----------------------------------------------------*/
 
