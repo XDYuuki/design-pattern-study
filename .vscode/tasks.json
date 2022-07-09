@@ -10,6 +10,7 @@
                 "${file}",
                 "singleton/*.cpp",
                 "builder/*.cpp",
+                "prototype/*.cpp",
                 "-static",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"

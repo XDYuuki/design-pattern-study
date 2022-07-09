@@ -4,17 +4,19 @@
 #include "singleton/Singleton.h"
 #include "builder/PremadeMealBoxBuilder.h"
 #include "builder/Meal.h"
+#include "prototype/ConcretePerson.h"
 
 //COMMAND TO COMPILE THE CODE
 //g++ -g main.cpp singleton/*.cpp builder/*.cpp -static -o main
-//g++ -fdiagnostics-color=always -g main.cpp singleton/*.cpp builder/*.cpp -static -o main.exe
+//g++ -fdiagnostics-color=always -g main.cpp singleton/*.cpp builder/*.cpp prototype/*.cpp -static -o main.exe
 
 
 /*----------------------------------------------------------------------*/
 int main(int argc, char const *argv[])
 {
-    TestSingleton();
-    TestBuilder();
+    // TestSingleton();
+    // TestBuilder();
+    TestPrototype();
 
     return 0;
 }
@@ -59,4 +61,16 @@ void TestBuilder()
     CustonMealBox01->MakeMeal()->MakeBeverage();
 
      MealBox->GetNotaFiscal();
+}
+
+/*----------------------------------------------------------------------*/
+void TestPrototype()
+{
+    ConcretePerson * Person1 = new ConcretePerson("Gabriel Rocha", 30);
+    //ConcretePerson * Person2 = Person1->Clone();
+
+    std::cout<<"Person1 name: "<<Person1->GetName()<<" Age: "<<Person1->GetAge()<<std::endl;
+    //std::cout<<"Person2 name: "<<Person2->GetName()<<" Age: "<<Person2->GetAge()<<std::endl;
+
+    delete Person1;
 }
