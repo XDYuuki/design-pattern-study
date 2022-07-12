@@ -6,8 +6,13 @@ private:
     static Singleton *instance_;
     int value_;
     Singleton(int value);
-    ~Singleton();
 public:
+
+/**
+ * @brief Destroy the Singleton object
+ * It is public so this way we can use unique_ptr
+ */
+    ~Singleton();
 /**
  * @brief Get the Instance object
  * 

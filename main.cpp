@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <vector>
+#include <memory>
 #include "main.h"
 #include "singleton/Singleton.h"
 #include "builder/PremadeMealBoxBuilder.h"
@@ -16,9 +17,9 @@
 /*----------------------------------------------------------------------*/
 int main(int argc, char const *argv[])
 {
-    // TestSingleton();
+    TestSingleton();
     // TestBuilder();
-    TestPrototype();
+    //TestPrototype();
 
     return 0;
 }
@@ -77,8 +78,8 @@ void TestSingleton()
 {
     int returnValue = 0;
 
-    Singleton * ptrSingleton = Singleton::getInstance(VALOR_INICIAL);
-    Singleton * ptrSingletonClone = Singleton::getInstance(VALOR_CLONADO);
+    std::unique_ptr<Singleton> ptrSingletonClone( Singleton::getInstance(VALOR_CLONADO));
+    std::unique_ptr<Singleton> ptrSingleton( Singleton::getInstance(VALOR_INICIAL));
 
     ptrSingleton->printTest();
     ptrSingletonClone->printTest();
