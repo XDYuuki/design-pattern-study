@@ -1,0 +1,14 @@
+1. Look at your class definition. Find the first non-inline virtual function that is not pure virtual (not "= 0")
+and whose definition you provide (not "= default").
+    * If there is no such function, try modifying your class so there is one. (Error possibly resolved.)
+    * See also the answer by Philip Thomas for a caveat.
+
+2. Find the definition for that function. If it is missing, add it! (Error possibly resolved.)
+    * If the function definition is outside the class definition, then make sure the function definition uses 
+      a qualified name, as in ClassName::function_name.
+
+3. Check your link command. If it does not mention the object file with that function's definition, 
+fix that! (Error possibly resolved.)
+
+4. Repeat steps 2 and 3 for each virtual function, then for each non-virtual function, until the error
+is resolved. If you're still stuck, repeat for each static data member.

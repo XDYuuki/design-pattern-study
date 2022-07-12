@@ -17,6 +17,11 @@ void TestSingleton();
  */
 void TestBuilder();
 
+/**
+ * @brief Função de testes para o Design Pattern Prototype
+ */
+void TestPrototype();
+
 /*-----------------------------------------------------*/
 
 
