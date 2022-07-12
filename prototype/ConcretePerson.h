@@ -3,22 +3,15 @@
 
 #include <iostream>
 #include <string>
-#include "interface/PrototypeInterface.h"
+#include "PersonPrototype.h"
 
-class ConcretePerson : public PrototypeInterface
+
+class ConcretePerson : public PersonPrototype
 {
-private:
-    std::string name_;
-    int age_;
-    //float concrete_prototype_field1_;
 public:
     //ConcretePerson(float concrete_prototype_field1);
-    ConcretePerson(std::string name, int age);
-    PrototypeInterface * Clone() const override;
-    std::string GetName();
-    int GetAge();
-    void SetName(std::string name);
-    void SetAge(int age);
+    ConcretePerson(std::string name, int age, EFavoriteColor favoriteColor):PersonPrototype(name, age, favoriteColor){}
+    PersonPrototype * Clone() const override;
 };
 
 #endif
