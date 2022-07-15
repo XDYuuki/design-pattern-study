@@ -11,7 +11,7 @@
 
 //COMMAND TO COMPILE THE CODE
 //g++ -g main.cpp singleton/*.cpp builder/*.cpp -static -o main
-//g++ -fdiagnostics-color=always -g main.cpp singleton/*.cpp builder/*.cpp prototype/*.cpp -static -o main.exe
+//g++ -fdiagnostics-color=always -g main.cpp singleton/*.cpp builder/*.cpp prototype/*.cpp factory/*.cpp -static -o main.exe
 
 
 /*----------------------------------------------------------------------*/
