@@ -1,23 +1,25 @@
+#ifndef CONCRETE_CAR_PRODUCT
+#define CONCRETE_CAR_PRODUCT
+
 #include <iostream>
 #include <string>
 #include "VehicleProduct.h"
+#include "VehicleFactory.h"
+
+#define ADDR_PLACE_HOLDER "---"
 
 class ConcreteCarProduct : public VehicleProduct
 {
 private:
-    std::string VehicleName_;
+    std::string DriverName_;
+    EServiceType ServiceType_;
+    std::string AddressDestiny_;
 public:
-    ConcreteCarProduct(std::string VehicleName) : VehicleName_(VehicleName){}
+    ConcreteCarProduct(std::string DriverName, EServiceType ServiceType) 
+    : DriverName_(DriverName), ServiceType_(ServiceType), AddressDestiny_(ADDR_PLACE_HOLDER){}
     void PickUp(std::string CustumerName) const override;
     void Stop() const override;
+    void SetAddressDestiny(std::string Address);
 };
 
-void ConcreteCarProduct::PickUp(std::string CustumerName) const
-{
-    std::cout<<this->VehicleName_<<"esta buscando "<<CustumerName<<std::endl;
-}
-
-void ConcreteCarProduct::Stop() const
-{
-    std::cout<<this->VehicleName_<<" parou!"<<std::endl;
-}
+#endif

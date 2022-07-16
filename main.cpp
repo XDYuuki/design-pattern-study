@@ -8,6 +8,8 @@
 #include "builder/Meal.h"
 #include "prototype/ConcretePerson.h"
 #include "prototype/PersonPrototype.h"
+#include "factory/ConcreteVehicleFactoryPeople.h"
+#include "factory/ConcreteVehicleFactoryDelivery.h"
 
 //COMMAND TO COMPILE THE CODE
 //g++ -g main.cpp singleton/*.cpp builder/*.cpp -static -o main
@@ -17,15 +19,35 @@
 /*----------------------------------------------------------------------*/
 int main(int argc, char const *argv[])
 {
-    TestSingleton();
+    // TestSingleton();
     // TestBuilder();
-    //TestPrototype();
+    // TestPrototype();
+    TestFactoryMethod();
 
     return 0;
 }
 
 
 
+/*----------------------------------------------------------------------*/
+void TestFactoryMethod()
+{
+    ConcreteVehicleFactoryPeople * CarPoolFactory = new ConcreteVehicleFactoryPeople();
+    ConcreteVehicleFactoryDelivery * DeliveryFactory = new ConcreteVehicleFactoryDelivery();
+
+    auto * Car01 = CarPoolFactory->FatoryMethod("Albus Dumbledore", CAR_POOL_PREMIUM);
+    Car01->PickUp("Dobby");
+    Car01->Stop();
+
+    auto * Delivery01 = DeliveryFactory->FatoryMethod("Ronald Mc Donald", DELIVERY_MOTOCYCLE);
+    Delivery01->PickUp("Mr King of the Burger");
+    Delivery01->Stop();
+
+    delete CarPoolFactory;
+    delete DeliveryFactory;
+    delete Car01;
+    delete Delivery01;
+}
 
 /*----------------------------------------------------------------------*/
 void TestPrototype()

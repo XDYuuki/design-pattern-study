@@ -22,6 +22,11 @@ void TestBuilder();
  */
 void TestPrototype();
 
+/**
+ * @brief Função de testes para o Design Pattern Factory Method
+ * 
+ */
+void TestFactoryMethod();
 /*-----------------------------------------------------*/
 
 
