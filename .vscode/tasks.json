@@ -11,6 +11,7 @@
                 "singleton/*.cpp",
                 "builder/*.cpp",
                 "prototype/*.cpp",
+                "factory/*.cpp",
                 "-static",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
