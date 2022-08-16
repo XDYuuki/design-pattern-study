@@ -45,11 +45,11 @@ In the root folder open a terminal type the followed commands.
 
 Build:
 
-> `g++ -fdiagnostics-color=always -g main.cpp -static -o filename-for-your-output.exe`
+`g++ -fdiagnostics-color=always -g main.cpp -static -o filename-for-your-output.exe`
 
 Run:
 
-> `./filename-for-your-output.exe`
+`./filename-for-your-output.exe`
 
 **You also can run this using the VSCode commands**
 
@@ -98,4 +98,4 @@ Sorry about the terrible english that I used to write this README. I am improvin
 And Once more. Thank you for your time and I holp that this project helps you somehow to understand design patterns and C++ as It helped me.
 
 ---
-⌨️ Best Regards ❤️ by: [Gabriel Lucas Rocha](https://github.com/XDYuuki) 😊
+⌨️ Best Regards 🐱‍👤 by: [Gabriel Lucas Rocha](https://github.com/XDYuuki) 😊
